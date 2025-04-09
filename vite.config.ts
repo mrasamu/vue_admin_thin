@@ -1,6 +1,11 @@
 import { getPluginsList } from "./build/plugins";
 import { include, exclude } from "./build/optimize";
-import { type UserConfigExport, type ConfigEnv, loadEnv } from "vite";
+import {
+  type UserConfigExport,
+  type ConfigEnv,
+  loadEnv,
+  defineConfig
+} from "vite";
 import {
   root,
   alias,
@@ -12,6 +17,7 @@ import {
 export default ({ mode }: ConfigEnv): UserConfigExport => {
   const { VITE_CDN, VITE_PORT, VITE_COMPRESSION, VITE_PUBLIC_PATH } =
     wrapperEnv(loadEnv(mode, root));
+
   return {
     base: VITE_PUBLIC_PATH,
     root,
@@ -34,7 +40,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
     // https://cn.vitejs.dev/config/dep-optimization-options.html#dep-optimization-options
     optimizeDeps: {
       include,
-      exclude
+      exclude: ["crypto"]
     },
     build: {
       // https://cn.vitejs.dev/guide/build.html#browser-compatibility

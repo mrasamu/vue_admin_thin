@@ -1,0 +1,10 @@
+使用 ECMAScript 模块（ESM）规范.
+
+tech stack:
+- vite
+- vue3
+- pinia
+- typescript
+- tailwindcss
+- fastapi
+
