@@ -1,3 +1,11 @@
+/*
+ * @Author: Mrasamu
+ * @Date: 2025-04-09 10:12:39
+ * @LastEditors: Mrasamu
+ * @LastEditTime: 2025-04-09 20:39:25
+ * @description: file content
+ * @FilePath: /pure-admin-thin/mock/refreshToken.ts
+ */
 import { defineFakeRoute } from "vite-plugin-fake-server/client";
 
 // 模拟刷新token接口
